@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Battleship1D {
+public class Battleship_1 {
     public static final int SIZE = 10;
     // Estados: 
     // 0: Agua, 1: Barco (solo visible en el propio tablero), 2: Tocado, 3: Hundido
