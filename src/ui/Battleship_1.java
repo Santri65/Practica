@@ -1,6 +1,12 @@
 import java.util.Random;
 import java.util.Scanner;
 
+/**
+ * mi clase Battleship_1
+ * La primera version del juego battleship de un jugador contra la maquina
+ * @author Santiago Cabal
+ * @version 1.0
+ */
 public class Battleship_1 {
     public static final int SIZE = 10;
     // Estados: 
@@ -9,7 +15,6 @@ public class Battleship_1 {
     public static final char SHIP = '1';
     public static final char HIT = '2';
     public static final char SUNK = '3';
-    // Para el seguimiento del tablero enemigo, internamente marcamos fallo con 'M'
     public static final char MISS = 'M';
     
     // Tableros (listas de 1d)
@@ -45,8 +50,7 @@ public class Battleship_1 {
         // Colocar barcos
         placeShipsAI();
         placeShipsPlayer();
-        
-        // Mostrar disposición del jugador
+    
         System.out.println("Tu línea de mar queda así:");
         printBoard(playerBoard, false);
         System.out.println("¡Muy bien! ¡Ahora vamos a jugar!");
@@ -54,7 +58,6 @@ public class Battleship_1 {
         boolean gameOver = false;
         // Bucle de juego: primero el jugador, luego la máquina
         while (!gameOver) {
-            // Turno del jugador
             System.out.println("\nTablero del enemigo:");
             printBoard(playerTracking, true);
             System.out.println("Dime el punto a atacar (1-" + SIZE + "):");
@@ -89,7 +92,7 @@ public class Battleship_1 {
         }
     }
     
-    // Inicializa un tablero llenándolo de WATER
+    // Inicializo un tablero llenandolo con Water
     public static void initializeBoard(char[] board) {
         for (int i = 0; i < SIZE; i++) {
             board[i] = WATER;
